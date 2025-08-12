@@ -1,0 +1,29 @@
+
+SELECT * FROM TABELA_DE_CLIENTES;
+
+SELECT NOME, LOWER(NOME) AS NOME_MINUSCULO FROM TABELA_DE_CLIENTES;
+
+SELECT NOME, LOWER(NOME) AS NOME_MINUSCULO, UPPER(NOME) AS NOME_MAIUSCULO FROM TABELA_DE_CLIENTES;
+
+SELECT * FROM TABELA_DE_CLIENTES;
+
+SELECT NOME, CONCAT(ENDERECO_1, ' ', BAIRRO, ' ', CIDADE, ' ', ESTADO, ' - ', CEP) AS ENDERECO_COMPLETO FROM TABELA_DE_CLIENTES;
+
+SELECT NOME, ENDERECO_1+ ' '+ BAIRRO+ ' '+ CIDADE+ ' '+ ESTADO+ ' - '+ CEP AS ENDERECO_COMPLETO FROM TABELA_DE_CLIENTES;
+
+SELECT * FROM TABELA_DE_PRODUTOS;
+
+SELECT NOME_DO_PRODUTO, LEFT(NOME_DO_PRODUTO,3) AS TRES_PRIMEIROS_CARACTERES FROM TABELA_DE_PRODUTOS;
+
+SELECT distinct TAMANHO, REPLACE(REPLACE(TAMANHO,'Litros', 'L' ), 'Litro', 'L') FROM TABELA_DE_PRODUTOS; 
+
+select nome, CHARINDEX(' ', nome) from TABELA_DE_CLIENTES;
+
+/* DESAFIO
+Sendo assim, faça uma consulta que traga somente o primeiro nome de cada cliente.
+Dica: Como foi dito pelo instrutor existem diversas funções do SQL Server e 
+muitas vezes não sabemos todas. Por isso, para resolver este problema 
+pesquise sobre a função CHARINDEX, veja como ela funciona, e aplique para 
+resolver este problema.*/
+
+SELECT NOME, SUBSTRING(NOME,1,CHARINDEX(' ', NOME)) AS PRIMEIRO_NOME FROM TABELA_DE_CLIENTES;
